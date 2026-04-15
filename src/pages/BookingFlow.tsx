@@ -91,6 +91,7 @@ export default function BookingFlow() {
   const isFree = totalAmount === 0;
 
   function handlePayment() {
+    if (!event) return;
     if (isFree) {
       const newBookingId = generateBookingId();
       setBookingId(newBookingId);
@@ -123,7 +124,7 @@ export default function BookingFlow() {
     }
   }
 
-  const qrValue = bookingId ? JSON.stringify({
+  const qrValue = bookingId && event ? JSON.stringify({
     id: bookingId,
     event: event.title,
     date: event.date,
