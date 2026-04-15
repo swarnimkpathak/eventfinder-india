@@ -72,7 +72,7 @@ const router = createBrowserRouter([
       </AppProvider>
     ),
   },
-], { basename: '/eventfinder-india' });
+]);
 
 export default function App() {
   return <RouterProvider router={router} />;
